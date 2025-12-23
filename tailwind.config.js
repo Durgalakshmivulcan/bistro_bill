@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       colors: {
         bb: {
-          bg: "#F5F7FA",
+          bg: "#FFFDF6",
           surface: "#FFFFFF",
           surfaceSoft: "#F2F4F7",
           text: "#1A1C1E",

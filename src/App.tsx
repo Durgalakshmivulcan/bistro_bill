@@ -4,7 +4,9 @@ import PointOfSale from "./pages/PointOfSale";
 import Login from "./pages/Login";
 import CatalogDashboard from "./pages/CatalogDashboard";
 import MyAccountPage from "./pages/SideBarPage";
-
+import BODashboard from "./pages/BusinessOwnerDashboard";
+import KitchenDisplaySystem from "./pages/KitchenDisplaySystem";
+import TakeOrder from "./pages/pos/takeOrderMain"
 export default function App() {
   return (
     <Routes>
@@ -13,6 +15,9 @@ export default function App() {
       {/* <Route path="/" element={<Dashboard />} /> */}
       <Route path="/pos" element={<PointOfSale />} />
       <Route path="/" element={<MyAccountPage />} />
+       <Route path="/bodashboard" element={<BODashboard />} />
+       <Route path="/kds" element={<KitchenDisplaySystem />} />
+       <Route path="/takeorder" element={<TakeOrder />} />
     </Routes>
   );
 }
