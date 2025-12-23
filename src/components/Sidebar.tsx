@@ -13,7 +13,7 @@ const Sidebar = ({ isOpen, onClose }: Props) => {
 
   return (
     <>
-      {/* Mobile backdrop */}
+      {/* Mobile Backdrop */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/60 z-40 md:hidden"
@@ -24,7 +24,8 @@ const Sidebar = ({ isOpen, onClose }: Props) => {
       <aside
         className={`
           bb-sidebar
-          fixed md:static
+          fixed md:sticky
+          top-0
           inset-y-0 left-0
           z-50 md:z-auto
           transition-transform duration-300
@@ -32,16 +33,17 @@ const Sidebar = ({ isOpen, onClose }: Props) => {
           md:translate-x-0
         `}
       >
-        {/* Header (LOGO ONLY) */}
+        {/* Logo */}
         <div className="bb-sidebar-header justify-center">
           <img
             src={logo}
             alt="Bistro Bill"
+            className="object-contain"
             style={{ width: "130px", height: "118.5px" }}
           />
         </div>
 
-        {/* Nav */}
+        {/* Navigation */}
         <nav className="bb-sidebar-nav">
           {sidebarItems.map((item) => {
             const isActive = location.pathname === item.path;
@@ -54,11 +56,11 @@ const Sidebar = ({ isOpen, onClose }: Props) => {
                 }`}
                 onClick={() => {
                   navigate(item.path);
-                  onClose(); // closes sidebar on mobile
+                  onClose();
                 }}
               >
                 <i className={`bi ${item.icon}`} />
-                {item.name}
+                <span>{item.name}</span>
               </div>
             );
           })}
