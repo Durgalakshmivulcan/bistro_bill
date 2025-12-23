@@ -15,7 +15,7 @@ module.exports = {
           textSoft: "#667085",
           muted: "#98A2B3",
           border: "#E4E7EC",
-          primary: "#3B82F6",
+          primary: "#FDC836",
           primarySoft: "#60A5FA",
           secondary: "#FFFFFF",
           danger: "#EF4444",

@@ -37,7 +37,7 @@
   /* Layout Shell */
   .bb-app-shell { @apply min-h-screen bg-bb-bg text-bb-text flex; }
   .bb-sidebar { @apply w-64 bg-bb-surface border-r border-bb-border flex flex-col; }
-  .bb-sidebar-header { @apply px-6 py-5 border-b border-bb-border flex items-center gap-2; }
+  .bb-sidebar-header {@apply px-6 py-5 flex items-center gap-2;}
   .bb-sidebar-brand { @apply text-xl font-semibold tracking-tight; }
   .bb-sidebar-nav { @apply flex-1 overflow-y-auto px-3 py-4 space-y-1; }
 
