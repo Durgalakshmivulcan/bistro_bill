@@ -9,6 +9,9 @@ import KitchenDisplaySystem from "./pages/KitchenDisplaySystem";
 import AddProduct from "./pages/AddProduct";
 import TakeOrder from "./pages/takeOrderMain";
 import OdersPage from "./pages/POSOrdersPage";
+import OrderHistory from "./pages/OrderHistory";
+import OrderActivity from "./pages/OrderActivity";
+import PaymentOptions from "./pages/PaymentOptions";
 export default function App() {
   return (
     <Routes>
@@ -22,6 +25,9 @@ export default function App() {
        <Route path="/takeorder" element={<TakeOrder />} />
       <Route path="/orderspage" element={<OdersPage />} />
        <Route path="/addproduct" element={<AddProduct/>} />
+       <Route path="/orderhistory" element={<OrderHistory/>} />
+        <Route path="/orderactivity" element={<OrderActivity/>} />
+        <Route path="/paymentoptions" element={<PaymentOptions/>} />
     </Routes>
   );
 }

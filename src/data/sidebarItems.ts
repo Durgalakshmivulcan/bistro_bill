@@ -1,3 +1,6 @@
+import path from "path";
+import KitchenDisplaySystem from "../pages/KitchenDisplaySystem";
+
 // sidebarItems.ts
 export const sidebarItems = [
   {
@@ -6,30 +9,55 @@ export const sidebarItems = [
     path: "/",
   },
   {
-    name: "Business Owners",
-    icon: "bi-people",
-    path: "/business-owners",
+    name: "Catalog",
+    icon: "bi-box-seam",
+    path: "/catalogdashboard",
   },
   {
-    name: "Subscription Plans",
-    icon: "bi-card-list",
-    path: "/subscription-plans",
+    name: "Business Owners",
+    icon: "bi-people",
+    path: "/bodashboard",
+  },
+  {
+    name: "Kitchen Display",
+    icon: "bi-ui-checks",
+    path: "/kds",
+  },
+  // {
+  //   name: "Subscription Plans",
+  //   icon: "bi-card-list",
+  //   path: "/subscription-plans",
+  // },
+  {
+    name: "Take Orders",
+    icon: "bi-bag-check",
+    path: "/takeorder",
   },
   {
     name: "Orders",
-    icon: "bi-bag-check",
-    path: "/orders",
-  },
-  {
-    name: "Contact Requests",
     icon: "bi-envelope",
-    path: "/contact-requests",
+    path: "/orderspage",
   },
   {
-    name: "Staff Management",
-    icon: "bi-person-badge",
-    path: "/staff-management",
+    name: "order History",
+    icon: "bi-clock-history",
+    path: "/orderhistory",
   },
+  {
+    name: "Order Activity",
+    icon: "bi-activity",
+    path: "/orderactivity",
+  },
+  {
+    name: "Payment Options",
+    icon: "bi-credit-card-2-front",
+    path: "/paymentoptions",
+  },
+  // {
+  //   name: "Staff Management",
+  //   icon: "bi-person-badge",
+  //   path: "/staff-management",
+  // },
   {
     name: "Blog Management",
     icon: "bi-journal-text",
