@@ -1,11 +1,22 @@
 import { Search, Download } from "lucide-react";
 import OrdersStatusSidebar from "./OrdersStatusSidebar";
 import OrdersList from "./OrdersList";
+type Product = {
+  id: number;
+  name: string;
+  price: number;
+};
 
-export default function ProductBrowser() {
+type ProductBrowserProps = {
+  onAdd: (product: Product) => void;
+};
+const ProductBrowser: React.FC<ProductBrowserProps> = ({ onAdd }) => {
   return (
     <div className="flex-1 bg-[#FFF9EF] px-3 sm:px-6 lg:px-8 py-4 space-y-5 overflow-y-auto">
+      
+      {/* TOP ROW */}
       <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+        
         {/* Tabs */}
         <div className="flex gap-3">
           <button className="px-4 sm:px-5 py-2 rounded-full bg-black text-white text-sm font-medium">
@@ -29,7 +40,7 @@ export default function ProductBrowser() {
         </div>
       </div>
 
-      {/* ===== FILTER ROW ===== */}
+      {/* FILTER ROW */}
       <div className="flex flex-wrap items-center gap-2">
         <button className="px-3 sm:px-4 py-2 rounded-xl border bg-white text-sm">
           Filter by Date
@@ -49,6 +60,7 @@ export default function ProductBrowser() {
         </button>
       </div>
 
+      {/* CONTENT */}
       <div className="flex gap-4 min-w-0">
         <div className="hidden lg:block shrink-0">
           <OrdersStatusSidebar />
@@ -58,9 +70,12 @@ export default function ProductBrowser() {
         </div>
       </div>
 
+      {/* MOBILE STATUS SIDEBAR */}
       <div className="block lg:hidden pt-4">
         <OrdersStatusSidebar />
       </div>
     </div>
   );
-}
+};
+
+export default ProductBrowser;

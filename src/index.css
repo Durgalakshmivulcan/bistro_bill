@@ -168,4 +168,17 @@
   }
   .bb-mobile-nav-item { @apply flex flex-col items-center justify-center text-[10px] text-bb-muted; }
   .bb-mobile-nav-item--active { @apply text-bb-primary; }
+  @keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out forwards;
+}
+
 }

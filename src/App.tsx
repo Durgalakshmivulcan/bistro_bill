@@ -11,7 +11,13 @@ import TakeOrder from "./pages/takeOrderMain";
 import OdersPage from "./pages/POSOrdersPage";
 import OrderHistory from "./pages/OrderHistory";
 import OrderActivity from "./pages/OrderActivity";
-import PaymentOptions from "./pages/PaymentOptions";
+import CatalogProductsPage from "./pages/CatalogProducts";
+import CatalogChannelMenu from "./pages/CatalogChannelMenu";
+import CatalogConfiguration from "./pages/CatalogConfiguration";
+import PaymentOptions from "./pages/businessSettingsTaxesPaymentsPaymentOptions";
+import BusinessSettingsTaxesPaymentsTaxOptions from "./pages/businessSettingsTaxesPaymentsTax";
+import Taxgroup from "./pages/businessSettingsTaxesPaymentsTaxGroup";
+import BusinessProfile from "./pages/businessSettingsGeneralSettingsBusinessProfile.component";
 export default function App() {
   return (
     <Routes>
@@ -25,10 +31,18 @@ export default function App() {
        <Route path="/takeorder" element={<TakeOrder />} />
       <Route path="/orderspage" element={<OdersPage />} />
        <Route path="/addproduct" element={<AddProduct/>} />
+       <Route path="/catalogproducts" element={<CatalogProductsPage/>} />
        <Route path="/orderhistory" element={<OrderHistory/>} />
         <Route path="/orderactivity" element={<OrderActivity/>} />
-        <Route path="/paymentoptions" element={<PaymentOptions/>} />
+        <Route path="/catalogchannelmenu" element={<CatalogChannelMenu/>} />
+        <Route path="/catalogconfiguration" element={<CatalogConfiguration/>} />
+        <Route path="/paymentoptions" element={<PaymentOptions />} />
+      <Route
+        path="/businesstaxoptions"
+        element={<BusinessSettingsTaxesPaymentsTaxOptions />}
+      />
+      <Route path="/businessprofile" element={<BusinessProfile />} />
+      <Route path="/taxgroup" element={<Taxgroup />} />
     </Routes>
   );
 }
-

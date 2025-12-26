@@ -1,6 +1,7 @@
 import DashboardLayout from "../layout/DashboardLayout";
 import SummaryCard from "../components/SummaryCard";
 import ProductCard from "../components/ProductCard";
+import CatalogTabs from "../components/NavTabs/CatalogTabs";
 
 import {
   summaryCards,
@@ -12,17 +13,7 @@ const CatalogDashboard = () => {
   return (
     <DashboardLayout>
       <div className="p-6 bg-[#FFFDF5] min-h-screen space-y-6">
-
-        {/* Page Tabs */}
-        <div className="flex gap-6 border-b text-sm">
-          <button className="pb-2 border-b-2 border-black font-medium">
-            Dashboard
-          </button>
-          <button className="pb-2 text-bb-textSoft">Products</button>
-          <button className="pb-2 text-bb-textSoft">Channel Menu</button>
-          <button className="pb-2 text-bb-textSoft">Configuration</button>
-        </div>
-
+  <CatalogTabs />
         {/* SUMMARY */}
         <section className="border border-bb-border rounded-xl p-4 bg-[#FFF9ED]">
           <h2 className="text-sm font-semibold mb-4 text-bb-warning">

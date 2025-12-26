@@ -21,6 +21,7 @@ module.exports = {
           danger: "#EF4444",
           warning: "#F59E0B",
           info: "#0EA5E9",
+          hover:"#FEE9AF",
         },
       },
       boxShadow: {

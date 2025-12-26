@@ -37,7 +37,7 @@ const ORDERS = [
 export default function OrdersList() {
   return (
     <div className="p-3 sm:p-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+       <div className="grid grid-cols-1 2xl:grid-cols-2 gap-4">
         {ORDERS.map((order) => (
           <OrderCard key={order.id} order={order} />
         ))}

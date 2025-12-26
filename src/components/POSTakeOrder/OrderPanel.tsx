@@ -11,16 +11,13 @@ const OrderPanel = () => {
         p-4
         w-full
         max-w-full
-        overflow-hidden
+        max-h-[calc(100vh-6rem)]
+        overflow-y-auto
       "
     >
-      {/* Order Type Tabs */}
       <OrderTypeTabs />
-
-      {/* Action Buttons */}
       <OrderActions />
 
-      {/* Accordions */}
       <div className="mt-6 space-y-3">
         <AccordionItem title="Table & Captain Details" />
         <AccordionItem title="Customer Details" />
@@ -30,5 +27,6 @@ const OrderPanel = () => {
     </div>
   );
 };
+
 
 export default OrderPanel;

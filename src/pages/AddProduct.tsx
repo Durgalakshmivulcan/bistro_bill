@@ -2,6 +2,7 @@ import Input from "../components/form/Input";
 import Select from "../components/form/Select";
 import Toggle from "../components/form/Toggle";
 import DashboardLayout from "../layout/DashboardLayout";
+import { ChevronRight } from "lucide-react";
 
 const AddProduct = () => {
     return (
@@ -18,10 +19,8 @@ const AddProduct = () => {
                     <button className="pb-2">Configuration</button>
                 </div>
 
-                <h1 className="text-xl font-semibold mb-4">Add Product</h1>
-
                 {/* Stepper */}
-                <div className="flex items-center gap-4 mb-6 text-sm">
+                <div className="flex items-center gap-2 mb-6 text-sm overflow-x-auto">
                     {[
                         "Product Details",
                         "Variants",
@@ -30,23 +29,43 @@ const AddProduct = () => {
                         "Images",
                         "Additional Details",
                         "Additional Ingredients",
-                    ].map((step, idx) => (
-                        <div key={step} className="flex items-center gap-2">
+                    ].map((step, idx, arr) => (
+                        <div key={step} className="flex items-center gap-2 shrink-0">
+                            {/* Step Circle */}
                             <div
-                                className={`w-6 h-6 rounded-full flex items-center justify-center text-xs
-                ${idx === 0 ? "bg-yellow-400 text-white" : "border"}`}
+                                className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-medium
+          ${idx === 0
+                                        ? "bg-yellow-400 text-black"
+                                        : "border border-gray-400 text-gray-600"
+                                    }`}
                             >
                                 {idx + 1}
                             </div>
-                            <span className={idx === 0 ? "font-medium" : ""}>{step}</span>
+
+                            {/* Step Label */}
+                            <span
+                                className={`whitespace-nowrap ${idx === 0 ? "font-medium text-black" : "text-gray-600"
+                                    }`}
+                            >
+                                {step}
+                            </span>
+
+                            {/* Arrow (except last item) */}
+                            {idx !== arr.length - 1 && (
+                                <div className="flex items-center mx-1 text-black">
+                                    <ChevronRight size={20} />
+                                    <ChevronRight size={20} className="-ml-1" />
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>
 
+
                 {/* Form Card */}
                 <div className="bg-[#FFF9ED] border rounded-xl p-6">
 
-                    <h2 className="font-semibold mb-4">Product Detail's</h2>
+                    <h2 className="font-semibold mb-4">Product Details</h2>
 
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
 
