@@ -1,8 +1,8 @@
-import DashboardLayout from "../../layout/DashboardLayout";
-import DiscountSection from "./DiscountSection";
-import MenuTabs from "./MenuTabs";
-import MenuGrid from "./MenuGrid";
-import OrderPanel from "./OrderPanel";
+import DashboardLayout from "../layout/DashboardLayout";
+import DiscountSection from "../components/POSTakeOrder/DiscountSection";
+import MenuTabs from "../components/POSTakeOrder/MenuTabs";
+import MenuGrid from "../components/POSTakeOrder/MenuGrid";
+import OrderPanel from "../components/POSTakeOrder/OrderPanel";
 
 const POSPage = () => {
   return (
