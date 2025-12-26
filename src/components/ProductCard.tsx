@@ -1,41 +1,60 @@
-import React from "react";
-import type { ProductItem } from "../data/dashboard";
+import { useState } from "react";
 
-type Props = {
-  product: ProductItem;
-};
+interface ProductCardProps {
+  name: string;
+  price: number | string;
+  image?: string;
+  imageUrl?: string;
+}
 
-const ProductCard: React.FC<Props> = ({ product }) => {
+const ProductCard = ({ name, price, image, imageUrl }: ProductCardProps) => {
+  const [open, setOpen] = useState(false);
+
+  const imgSrc = imageUrl || image || "/placeholder.jpg";
+
   return (
-    <div className="bg-white border border-borderLight rounded-xl shadow-card flex items-stretch overflow-hidden">
-      {/* left: star + text */}
-      <div className="flex-1 p-3 flex flex-col justify-between">
-        <div className="flex items-start justify-between gap-2">
-          <button
-            className="text-yellow-500 text-lg leading-none"
-            aria-label="Mark as favorite"
-          >
-            ★
+    <div className="relative bg-white border border-bb-border rounded-lg p-3 flex gap-3">
+
+      {/* Image */}
+      <img
+        src={imgSrc}
+        alt={name}
+        className="w-16 h-12 rounded object-cover bg-gray-100"
+      />
+
+      {/* Content */}
+      <div className="flex-1">
+        <div className="text-sm font-medium">{name}</div>
+        <div className="text-xs text-bb-textSoft">
+          Price : {typeof price === "number" ? `₹ ${price}` : price}
+        </div>
+      </div>
+
+      {/* Menu Button */}
+      <button
+        className="text-gray-400 hover:text-gray-600"
+        onClick={() => setOpen(!open)}
+      >
+        <i className="bi bi-three-dots-vertical"></i>
+      </button>
+
+      {/* Dropdown Menu */}
+      {open && (
+        <div className="absolute right-2 top-10 z-10 w-32 bg-white border border-bb-border rounded-md shadow-md text-sm">
+          <button className="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-50">
+            <i className="bi bi-eye"></i> View
+          </button>
+          <button className="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-50">
+            <i className="bi bi-pencil"></i> Edit
+          </button>
+          <button className="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-50 text-red-600">
+            <i className="bi bi-trash"></i> Delete
+          </button>
+          <button className="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-50">
+            <i className="bi bi-star"></i> Favorite
           </button>
         </div>
-        <div className="mt-1">
-          <p className="text-sm font-medium leading-snug">
-            {product.name}
-          </p>
-          <p className="text-xs text-textMuted mt-1">
-            Price: {product.price}
-          </p>
-        </div>
-      </div>
-
-      {/* right: image */}
-      <div className="w-24 h-20 sm:w-28 sm:h-20 flex-shrink-0">
-        <img
-          src={product.imageUrl}
-          alt={product.name}
-          className="w-full h-full object-cover"
-        />
-      </div>
+      )}
     </div>
   );
 };

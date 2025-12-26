@@ -1,20 +1,19 @@
-import React from "react";
-
-type Props = {
+interface SummaryCardProps {
   title: string;
-  value: number | string;
+  value: number;
   icon: string;
-};
+}
 
-const SummaryCard: React.FC<Props> = ({ title, value, icon }) => (
-  <div className="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-4 shadow-sm">
-    <img src={icon} className="h-12 w-12" alt="" />
-
-    <div>
-      <p className="text-xs text-gray-500">{title}</p>
-      <p className="text-lg font-semibold">{value}</p>
+const SummaryCard = ({ title, value, icon }: SummaryCardProps) => {
+  return (
+    <div className="bg-white border border-bb-border rounded-lg p-4 flex gap-3 items-center">
+      <div className="text-3xl">{icon}</div>
+      <div>
+        <div className="text-xs text-bb-textSoft">{title}</div>
+        <div className="text-lg font-semibold">{value}</div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default SummaryCard;

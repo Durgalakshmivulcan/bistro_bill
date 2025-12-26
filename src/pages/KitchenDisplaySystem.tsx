@@ -3,7 +3,7 @@ import OrderCard from "../components/Cards/OrderCard";
 
 const KitchenDisplaySystem = () => {
   return (
-    <div className="p-4 bg-[#FFFDF5] min-h-screen space-y-4">
+    <div className="p-4 bg-bb-bg min-h-screen space-y-4">
 
       {/* Header */}
       <div className="flex justify-between items-center">
@@ -11,10 +11,24 @@ const KitchenDisplaySystem = () => {
           ← Kitchen Display System
         </h1>
 
-        <select className="border rounded-md px-2 py-1 text-sm">
-          <option>Kitchen-1</option>
-          <option>Kitchen-2</option>
-        </select>
+       <div className="flex items-center gap-3">
+
+    {/* Kitchen Selector */}
+    <select className="border border-bb-border rounded-md bg-bb-bg px-3 py-2 text-sm flex items-center gap-2">
+      <option>Kitchen-1</option>
+      <option>Kitchen-2</option>
+      <option>Kitchen-3</option>
+    </select>
+
+    {/* Refresh Button */}
+    <button
+      className="bg-black text-white rounded-md w-9 h-9 flex items-center justify-center hover:bg-gray-800 transition"
+      title="Refresh"
+    >
+      <i className="bi bi-arrow-clockwise text-sm"></i>
+    </button>
+
+  </div>
       </div>
 
       {/* Columns */}
@@ -29,7 +43,7 @@ const KitchenDisplaySystem = () => {
               {column.title}
             </div>
 
-            <div className="p-2 space-y-3 overflow-y-auto flex-1"  style={{ backgroundColor: "#EDE7D4"}}>
+            <div className="p-2 space-y-3 overflow-y-auto rounded-b-lg"  style={{ backgroundColor: "#EDE7D4"}}>
   {column.orders.map((order) => (
     <OrderCard
       key={order.id}

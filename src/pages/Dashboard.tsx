@@ -27,7 +27,7 @@ const Dashboard: React.FC = () => {
             </h2>
             <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
               {topSelling.map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product.id} name={product.name} price={product.price}  image={product.imageUrl} />
               ))}
             </div>
           </section>
@@ -39,7 +39,7 @@ const Dashboard: React.FC = () => {
             </h2>
             <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3 mb-4">
               {lastSale.map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product.id} name={product.name} price={product.price}  image={product.imageUrl} />
               ))}
             </div>
           </section>
